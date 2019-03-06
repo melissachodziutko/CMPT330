@@ -34,10 +34,11 @@ import javax.swing.AbstractListModel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
-public class ChodziutkoSACAPframe extends JFrame {
+public class ChodziutkoSACAPframe1 extends JFrame {
 
 	//welcome to hell
 	//all the stuff that exists on applicant info pane
+	public int children = 0;
 	private final JMenuBar menuBar = new JMenuBar();
 	private JPanel contentPane;
 	private final JTabbedPane infoTabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -125,45 +126,146 @@ public class ChodziutkoSACAPframe extends JFrame {
 	private final Canvas upperExpensesLine = new Canvas();
 	private final ButtonGroup rentMortgageGroup = new ButtonGroup();
 	private final ButtonGroup transitGasGroup = new ButtonGroup();
-	//net income
 	private final Canvas finalLine = new Canvas();
 	private final JLabel netIncomeLabel = new JLabel("NET INCOME:");
 	private final JLabel totalNetIncomeLabel = new JLabel(" ");
-	//child tab
+	//child tabs
+	//child 1
+	private final JPanel child1Panel = new JPanel();
+	private final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 	private final JLabel applicantChildLabel = new JLabel("Applicant Name:");
 	private final JLabel nameChildLabel = new JLabel("");
 	private final JLabel howManyChildrenLabel = new JLabel("How many children are you applying for?");
-	private final JComboBox childrenComboBox = new JComboBox();
-	private final ButtonGroup gender1Group = new ButtonGroup();
-	private final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-	private final JPanel child1Panel = new JPanel();
-	private final JLabel child1NameLabel = new JLabel("Child 1 First Name:");
-	private final JFormattedTextField child1NameFTF = new JFormattedTextField();
 	private final JLabel child1GenderLabel = new JLabel("Gender:");
-	private final JRadioButton female1Button = new JRadioButton("Female");
-	private final JRadioButton male1Button = new JRadioButton("Male");
-	private final JRadioButton other1Button = new JRadioButton("Other");
+	private final JLabel child1NameLabel = new JLabel("Child 1 First Name:");
 	private final JLabel child1BirthdayLabel = new JLabel("Birthday:");
-	private final JFormattedTextField birthDay1FTF = new JFormattedTextField("1");
 	private final JLabel child1DayLabel = new JLabel("Day:");
 	private final JLabel child1MonthLabel = new JLabel("Month:");
-	private final JFormattedTextField birthMonth1FTF = new JFormattedTextField("1");
 	private final JLabel child1YearLabel = new JLabel("Year:");
-	private final JFormattedTextField birthYear1FTF = new JFormattedTextField("1990");
 	private final JLabel child1AgeLabel = new JLabel("Age:");
 	private final JLabel ageCalc1Label = new JLabel("");
-	private final JComboBox child1ClothingComboBox = new JComboBox();
 	private final JLabel child1ClothingLabel = new JLabel("Clothing Size:");
-	private final JComboBox child1CoatComboBox = new JComboBox();
 	private final JLabel child1ShoeLabel = new JLabel("Shoe size:");
 	private final JLabel child1CoatLabel = new JLabel("Coat Size:");
-	private final JFormattedTextField child1ShoeFTF = new JFormattedTextField();
-	private final JComboBox child1ShoeComboBox = new JComboBox();
 	private final JLabel child1GameSystemsLabel = new JLabel("What Game Systems does this child own?:");
 	private final JLabel child1InterestsLabel = new JLabel("What are some of this child's interests?:");
 	private final JLabel child1OtherInterestsLabel = new JLabel("Other interests:");
+	private final JFormattedTextField birthDay1FTF = new JFormattedTextField("1");
+	private final JFormattedTextField birthMonth1FTF = new JFormattedTextField("1");
+	private final JFormattedTextField birthYear1FTF = new JFormattedTextField("1990");
+	private final JFormattedTextField child1NameFTF = new JFormattedTextField();
+	private final JFormattedTextField child1ShoeFTF = new JFormattedTextField();
+	private final ButtonGroup gender1Group = new ButtonGroup();
+	private final JRadioButton female1Button = new JRadioButton("Female");
+	private final JRadioButton male1Button = new JRadioButton("Male");
+	private final JRadioButton other1Button = new JRadioButton("Other");
+	private final JComboBox childrenComboBox = new JComboBox();
+	private final JComboBox child1ClothingComboBox = new JComboBox();
+	private final JComboBox child1CoatComboBox = new JComboBox();
+	private final JComboBox child1ShoeComboBox = new JComboBox();
 	private final JTextField child1OtherInterestsTextField = new JTextField();
-	//
+	private final JList child1GameSystemsList = new JList();
+	private final JScrollPane child1GameSystemsScrollPane = new JScrollPane();
+	private final JList child1InterestsList = new JList();
+	private final JScrollPane child1InterestsScrollPanel = new JScrollPane();
+	//child 2
+	private final ButtonGroup gender2Group = new ButtonGroup();
+	private final JLabel child2NameLabel = new JLabel("Child 2 First Name:");
+	private final JFormattedTextField child2NameFTF = new JFormattedTextField();
+	private final JLabel child2GenderLabel = new JLabel("Gender:");
+	private final JRadioButton female2Button = new JRadioButton("Female");
+	private final JRadioButton male2Button = new JRadioButton("Male");
+	private final JRadioButton other2Button = new JRadioButton("Other");
+	private final JLabel child2BirthdayLabel = new JLabel("Birthday:");
+	private final JFormattedTextField birthDay2FTF = new JFormattedTextField("1");
+	private final JLabel child2DayLabel = new JLabel("Day:");
+	private final JLabel child2MonthLabel = new JLabel("Month:");
+	private final JFormattedTextField birthMonth2FTF = new JFormattedTextField("1");
+	private final JLabel child2YearLabel = new JLabel("Year:");
+	private final JFormattedTextField birthYear2FTF = new JFormattedTextField("1990");
+	private final JLabel child2AgeLabel = new JLabel("Age:");
+	private final JLabel ageCalc2Label = new JLabel("");
+	private final JComboBox child2ClothingComboBox = new JComboBox();
+	private final JLabel child2ClothingLabel = new JLabel("Clothing Size:");
+	private final JComboBox child2CoatComboBox = new JComboBox();
+	private final JLabel child2ShoeLabel = new JLabel("Shoe size:");
+	private final JLabel child2CoatLabel = new JLabel("Coat Size:");
+	private final JFormattedTextField child2ShoeFTF = new JFormattedTextField();
+	private final JComboBox child2ShoeComboBox = new JComboBox();
+	private final JLabel child2GameSystemsLabel = new JLabel("What Game Systems does this child own?:");
+	private final JLabel child2InterestsLabel = new JLabel("What are some of this child's interests?:");
+	private final JLabel child2OtherInterestsLabel = new JLabel("Other interests:");
+	private final JTextField child2OtherInterestsTextField = new JTextField();
+	private final JList child2GameSystemsList = new JList();
+	private final JScrollPane child2GameSystemsScrollPane = new JScrollPane();
+	private final JList child2InterestsList = new JList();
+	private final JScrollPane child2InterestsScrollPanel = new JScrollPane();
+	//child 3
+	private final JLabel child3NameLabel = new JLabel("Child 3 First Name:");
+	private final JLabel child3GenderLabel = new JLabel("Gender:");
+	private final JLabel child3BirthdayLabel = new JLabel("Birthday:");
+	private final JLabel child3DayLabel = new JLabel("Day:");
+	private final JLabel child3MonthLabel = new JLabel("Month:");
+	private final JLabel child3YearLabel = new JLabel("Year:");
+	private final JLabel child3AgeLabel = new JLabel("Age:");
+	private final JLabel ageCalc3Label = new JLabel("");
+	private final JLabel child3ShoeLabel = new JLabel("Shoe size:");
+	private final JLabel child3CoatLabel = new JLabel("Coat Size:");
+	private final JLabel child3ClothingLabel = new JLabel("Clothing Size:");
+	private final JLabel child3GameSystemsLabel = new JLabel("What Game Systems does this child own?:");
+	private final JLabel child3InterestsLabel = new JLabel("What are some of this child's interests?:");	
+	private final JLabel child3OtherInterestsLabel = new JLabel("Other interests:");
+	private final JFormattedTextField child3NameFTF = new JFormattedTextField();
+	private final JFormattedTextField birthDay3FTF = new JFormattedTextField("1");
+	private final JFormattedTextField birthMonth3FTF = new JFormattedTextField("1");
+	private final JFormattedTextField birthYear3FTF = new JFormattedTextField("1990");
+	private final JFormattedTextField child3ShoeFTF = new JFormattedTextField();
+	private final ButtonGroup gender3Group = new ButtonGroup();
+	private final JRadioButton female3Button = new JRadioButton("Female");
+	private final JRadioButton male3Button = new JRadioButton("Male");
+	private final JRadioButton other3Button = new JRadioButton("Other");
+	private final JComboBox child3ClothingComboBox = new JComboBox();
+	private final JComboBox child3CoatComboBox = new JComboBox();
+	private final JComboBox child3ShoeComboBox = new JComboBox();
+	private final JTextField child3OtherInterestsTextField = new JTextField();
+	private final JList child3GameSystemsList = new JList();
+	private final JScrollPane child3GameSystemsScrollPane = new JScrollPane();
+	private final JList child3InterestsList = new JList();
+	private final JScrollPane child3InterestsScrollPanel = new JScrollPane();
+	//child 4
+	private final JLabel child4NameLabel = new JLabel("Child 4 First Name:");
+	private final JLabel child4DayLabel = new JLabel("Day:");
+	private final JLabel child4MonthLabel = new JLabel("Month:");
+	private final JLabel child4BirthdayLabel = new JLabel("Birthday:");
+	private final JLabel child4GenderLabel = new JLabel("Gender:");
+	private final JLabel child4AgeLabel = new JLabel("Age:");
+	private final JLabel ageCalc4Label = new JLabel("");
+	private final JLabel child4YearLabel = new JLabel("Year:");
+	private final JLabel child4ClothingLabel = new JLabel("Clothing Size:");
+	private final JLabel child4ShoeLabel = new JLabel("Shoe size:");
+	private final JLabel child4CoatLabel = new JLabel("Coat Size:");
+	private final JLabel child4GameSystemsLabel = new JLabel("What Game Systems does this child own?:");
+	private final JLabel child4InterestsLabel = new JLabel("What are some of this child's interests?:");
+	private final JLabel child4OtherInterestsLabel = new JLabel("Other interests:");
+	private final ButtonGroup gender4Group = new ButtonGroup();
+	private final JRadioButton female4Button = new JRadioButton("Female");
+	private final JRadioButton male4Button = new JRadioButton("Male");
+	private final JRadioButton other4Button = new JRadioButton("Other");
+	private final JFormattedTextField child4NameFTF = new JFormattedTextField();
+	private final JFormattedTextField birthDay4FTF = new JFormattedTextField("1");
+	private final JFormattedTextField birthMonth4FTF = new JFormattedTextField("1");
+	private final JFormattedTextField birthYear4FTF = new JFormattedTextField("1990");
+	private final JFormattedTextField child4ShoeFTF = new JFormattedTextField();
+	private final JComboBox child4ClothingComboBox = new JComboBox();
+	private final JComboBox child4CoatComboBox = new JComboBox();	
+	private final JComboBox child4ShoeComboBox = new JComboBox();
+	private final JTextField child4OtherInterestsTextField = new JTextField();	
+	private final JList child4GameSystemsList = new JList();
+	private final JScrollPane child4GameSystemsScrollPane = new JScrollPane();
+	private final JList child4InterestsList = new JList();
+	private final JScrollPane child4InterestsScrollPanel = new JScrollPane();	
+	
+		
 	
 	
 	//container for all the masks I need
@@ -211,110 +313,7 @@ public class ChodziutkoSACAPframe extends JFrame {
 	MaskFormatter child2ShoeMask = createFormatter("##.#");
 	MaskFormatter child3ShoeMask = createFormatter("##.#");
 	MaskFormatter child4ShoeMask = createFormatter("##.#");
-	
-
-	//child 2
-	private final ButtonGroup gender2Group = new ButtonGroup();
-	private final JLabel child2NameLabel = new JLabel("Child 2 First Name:");
-	private final JFormattedTextField child2NameFTF = new JFormattedTextField();
-	private final JLabel child2GenderLabel = new JLabel("Gender:");
-	private final JRadioButton female2Button = new JRadioButton("Female");
-	private final JRadioButton male2Button = new JRadioButton("Male");
-	private final JRadioButton other2Button = new JRadioButton("Other");
-	private final JLabel child2BirthdayLabel = new JLabel("Birthday:");
-	private final JFormattedTextField birthDay2FTF = new JFormattedTextField("1");
-	private final JLabel child2DayLabel = new JLabel("Day:");
-	private final JLabel child2MonthLabel = new JLabel("Month:");
-	private final JFormattedTextField birthMonth2FTF = new JFormattedTextField("1");
-	private final JLabel child2YearLabel = new JLabel("Year:");
-	private final JFormattedTextField birthYear2FTF = new JFormattedTextField("1990");
-	private final JLabel child2AgeLabel = new JLabel("Age:");
-	private final JLabel ageCalc2Label = new JLabel("");
-	private final JComboBox child2ClothingComboBox = new JComboBox();
-	private final JLabel child2ClothingLabel = new JLabel("Clothing Size:");
-	private final JComboBox child2CoatComboBox = new JComboBox();
-	private final JLabel child2ShoeLabel = new JLabel("Shoe size:");
-	private final JLabel child2CoatLabel = new JLabel("Coat Size:");
-	private final JFormattedTextField child2ShoeFTF = new JFormattedTextField();
-	private final JComboBox child2ShoeComboBox = new JComboBox();
-	private final JLabel child2GameSystemsLabel = new JLabel("What Game Systems does this child own?:");
-	private final JLabel child2InterestsLabel = new JLabel("What are some of this child's interests?:");
-	private final JLabel child2OtherInterestsLabel = new JLabel("Other interests:");
-	private final JTextField child2OtherInterestsTextField = new JTextField();
-	//child 3
-	private final ButtonGroup gender3Group = new ButtonGroup();
-	private final JLabel child3NameLabel = new JLabel("Child 3 First Name:");
-	private final JFormattedTextField child3NameFTF = new JFormattedTextField();
-	private final JLabel child3GenderLabel = new JLabel("Gender:");
-	private final JRadioButton female3Button = new JRadioButton("Female");
-	private final JRadioButton male3Button = new JRadioButton("Male");
-	private final JRadioButton other3Button = new JRadioButton("Other");
-	private final JLabel child3BirthdayLabel = new JLabel("Birthday:");
-	private final JFormattedTextField birthDay3FTF = new JFormattedTextField("1");
-	private final JLabel child3DayLabel = new JLabel("Day:");
-	private final JLabel child3MonthLabel = new JLabel("Month:");
-	private final JFormattedTextField birthMonth3FTF = new JFormattedTextField("1");
-	private final JLabel child3YearLabel = new JLabel("Year:");
-	private final JFormattedTextField birthYear3FTF = new JFormattedTextField("1990");
-	private final JLabel child3AgeLabel = new JLabel("Age:");
-	private final JLabel ageCalc3Label = new JLabel("");
-	private final JComboBox child3ClothingComboBox = new JComboBox();
-	private final JLabel child3ClothingLabel = new JLabel("Clothing Size:");
-	private final JComboBox child3CoatComboBox = new JComboBox();
-	private final JLabel child3ShoeLabel = new JLabel("Shoe size:");
-	private final JLabel child3CoatLabel = new JLabel("Coat Size:");
-	private final JFormattedTextField child3ShoeFTF = new JFormattedTextField();
-	private final JComboBox child3ShoeComboBox = new JComboBox();
-	private final JLabel child3GameSystemsLabel = new JLabel("What Game Systems does this child own?:");
-	private final JLabel child3InterestsLabel = new JLabel("What are some of this child's interests?:");
-	private final JLabel child3OtherInterestsLabel = new JLabel("Other interests:");
-	private final JTextField child3OtherInterestsTextField = new JTextField();
-	//child 4
-	private final ButtonGroup gender4Group = new ButtonGroup();
-	private final JLabel child4NameLabel = new JLabel("Child 4 First Name:");
-	private final JFormattedTextField child4NameFTF = new JFormattedTextField();
-	private final JLabel child4GenderLabel = new JLabel("Gender:");
-	private final JRadioButton female4Button = new JRadioButton("Female");
-	private final JRadioButton male4Button = new JRadioButton("Male");
-	private final JRadioButton other4Button = new JRadioButton("Other");
-	private final JLabel child4BirthdayLabel = new JLabel("Birthday:");
-	private final JFormattedTextField birthDay4FTF = new JFormattedTextField("1");
-	private final JLabel child4DayLabel = new JLabel("Day:");
-	private final JLabel child4MonthLabel = new JLabel("Month:");
-	private final JFormattedTextField birthMonth4FTF = new JFormattedTextField("1");
-	private final JLabel child4YearLabel = new JLabel("Year:");
-	private final JFormattedTextField birthYear4FTF = new JFormattedTextField("1990");
-	private final JLabel child4AgeLabel = new JLabel("Age:");
-	private final JLabel ageCalc4Label = new JLabel("");
-	private final JComboBox child4ClothingComboBox = new JComboBox();
-	private final JLabel child4ClothingLabel = new JLabel("Clothing Size:");
-	private final JComboBox child4CoatComboBox = new JComboBox();
-	private final JLabel child4ShoeLabel = new JLabel("Shoe size:");
-	private final JLabel child4CoatLabel = new JLabel("Coat Size:");
-	private final JFormattedTextField child4ShoeFTF = new JFormattedTextField();
-	private final JComboBox child4ShoeComboBox = new JComboBox();
-	private final JLabel child4GameSystemsLabel = new JLabel("What Game Systems does this child own?:");
-	private final JLabel child4InterestsLabel = new JLabel("What are some of this child's interests?:");
-	private final JLabel child4OtherInterestsLabel = new JLabel("Other interests:");
-	private final JTextField child4OtherInterestsTextField = new JTextField();
-	//
-	private final JList child1GameSystemsList = new JList();
-	private final JScrollPane child1GameSystemsScrollPane = new JScrollPane();
-	//
-	private final JList child2GameSystemsList = new JList();
-	private final JScrollPane child2GameSystemsScrollPane = new JScrollPane();
-	private final JList child3GameSystemsList = new JList();
-	private final JScrollPane child3GameSystemsScrollPane = new JScrollPane();
-	private final JList child4GameSystemsList = new JList();
-	private final JScrollPane child4GameSystemsScrollPane = new JScrollPane();
-	private final JList child1InterestsList = new JList();
-	private final JScrollPane child1InterestsScrollPanel = new JScrollPane();
-	private final JList child2InterestsList = new JList();
-	private final JScrollPane child2InterestsScrollPanel = new JScrollPane();
-	private final JList child3InterestsList = new JList();
-	private final JScrollPane child3InterestsScrollPanel = new JScrollPane();
-	private final JList child4InterestsList = new JList();
-	private final JScrollPane child4InterestsScrollPanel = new JScrollPane();
+	private final JMenuItem mntmHelp = new JMenuItem("Help...");
 	//
 
 	//main
@@ -322,7 +321,7 @@ public class ChodziutkoSACAPframe extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ChodziutkoSACAPframe frame = new ChodziutkoSACAPframe();
+					ChodziutkoSACAPframe1 frame = new ChodziutkoSACAPframe1();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -332,7 +331,6 @@ public class ChodziutkoSACAPframe extends JFrame {
 		
 		
 	}
-	//
 	
 	//mask formatter
 	public MaskFormatter createFormatter(String s) {
@@ -346,9 +344,8 @@ public class ChodziutkoSACAPframe extends JFrame {
 		      }
 	      return formatter;
 	}
-	//
 	
-	public ChodziutkoSACAPframe() {
+	public ChodziutkoSACAPframe1() {
 		totalIncomeTextField.setText("0");
 		totalIncomeTextField.setBounds(351, 243, 123, 26);
 		totalIncomeTextField.setColumns(10);
@@ -387,6 +384,8 @@ public class ChodziutkoSACAPframe extends JFrame {
 		//add help option
 		JMenu helpMenu = new JMenu("Help");
 		menuBar.add(helpMenu);
+		
+		helpMenu.add(mntmHelp);
 		//
 		
 		
@@ -574,7 +573,6 @@ public class ChodziutkoSACAPframe extends JFrame {
 		scrollPane.setBounds(97, 221, 171, 126);
 		
 		infoPanel.add(scrollPane);
-	
 		//
 		
 		//label for defining where the applicant name would sit
@@ -654,20 +652,20 @@ public class ChodziutkoSACAPframe extends JFrame {
 		upperSeparationLine.setBackground(Color.BLACK);
 		upperSeparationLine.setBounds(161, 58, 313, 1);
 		financialPanel.add(upperSeparationLine);
-		incomeLabel.setToolTipText("Enter whole numbers, rounded to the nearest dollar.");
 		//
 		
 		//income indicator at the top of the page
 		incomeLabel.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		incomeLabel.setToolTipText("Enter whole numbers, rounded to the nearest dollar.");
 		incomeLabel.setBounds(279, 34, 71, 16);
 		financialPanel.add(incomeLabel);
-		employmentFTF.setText("0");
 		//
 		
 		//employment ftf
 		employmentFTF.setBounds(350, 60, 124, 26);
 		employmentMask.setPlaceholderCharacter(' ');
 		employmentMask.install(employmentFTF);
+		employmentFTF.setText("0");
 		financialPanel.add(employmentFTF);
 		employmentFTF.addFocusListener(new FocusAdapter() {
 			@Override
@@ -675,13 +673,13 @@ public class ChodziutkoSACAPframe extends JFrame {
 				do_employmentFTF_focusLost(e);
 			}
 		});
-		childSupportFTF.setText("0");
 		//
 		
 		//child support ftf
 		childSupportFTF.setBounds(350, 88, 124, 26);
 		childSupportMask.setPlaceholderCharacter(' ');
 		childSupportMask.install(childSupportFTF);
+		childSupportFTF.setText("0");
 		financialPanel.add(childSupportFTF);
 		childSupportFTF.addFocusListener(new FocusAdapter() {
 			@Override
@@ -689,13 +687,13 @@ public class ChodziutkoSACAPframe extends JFrame {
 				do_childSupportFTF_focusLost(e);
 			}
 		});
-		ontarioFTF.setText("0");
 		//
 		
 		//ontario ftf
 		ontarioFTF.setBounds(350, 116, 124, 26);
 		ontarioMask.setPlaceholderCharacter(' ');
 		ontarioMask.install(ontarioFTF);
+		ontarioFTF.setText("0");
 		financialPanel.add(ontarioFTF);
 		ontarioFTF.addFocusListener(new FocusAdapter() {
 			@Override
@@ -703,13 +701,13 @@ public class ChodziutkoSACAPframe extends JFrame {
 				do_ontarioFTF_focusLost(e);
 			}
 		});
-		eiFTF.setText("0");
 		//
 		
 		//E.I. or disability ftf
 		eiFTF.setBounds(350, 144, 124, 26);
 		eiMask.setPlaceholderCharacter(' ');
 		eiMask.install(eiFTF);
+		eiFTF.setText("0");
 		financialPanel.add(eiFTF);
 		eiFTF.addFocusListener(new FocusAdapter() {
 			@Override
@@ -717,13 +715,13 @@ public class ChodziutkoSACAPframe extends JFrame {
 				do_eiFTF_focusLost(e);
 			}
 		});
-		pensionFTF.setText("0");
 		//
 		
 		//pension ftf
 		pensionFTF.setBounds(350, 172, 124, 26);
 		pensionMask.setPlaceholderCharacter(' ');
 		pensionMask.install(pensionFTF);
+		pensionFTF.setText("0");
 		financialPanel.add(pensionFTF);
 		pensionFTF.addFocusListener(new FocusAdapter() {
 			@Override
@@ -731,13 +729,13 @@ public class ChodziutkoSACAPframe extends JFrame {
 				do_pensionFTF_focusLost(e);
 			}
 		});
-		childTaxFTF.setText("0");
 		//
 		
 		//child tax credits ftf
 		childTaxFTF.setBounds(350, 201, 124, 26);
 		childTaxMask.setPlaceholderCharacter(' ');
 		childTaxMask.install(childTaxFTF);
+		childTaxFTF.setText("0");
 		financialPanel.add(childTaxFTF);
 		childTaxFTF.addFocusListener(new FocusAdapter() {
 			@Override
@@ -925,107 +923,25 @@ public class ChodziutkoSACAPframe extends JFrame {
 		financialPanel.add(totalExpensesTextField);
 		finalLine.setBackground(Color.BLACK);
 		finalLine.setBounds(30, 580, 444, 1);
-		
 		financialPanel.add(finalLine);
 		netIncomeLabel.setBounds(56, 610, 91, 16);
-		
 		financialPanel.add(netIncomeLabel);
 		totalNetIncomeLabel.setBounds(161, 610, 123, 20);
-		
 		financialPanel.add(totalNetIncomeLabel);
 		//
 		
 		
-		
-		
+		//child info pane
 		infoTabbedPane.addTab("Child Information", null, childPanel, null);
 		childPanel.setLayout(null);
-		applicantChildLabel.setBounds(6, 6, 111, 16);
-		
-		childPanel.add(applicantChildLabel);
-		nameChildLabel.setBounds(117, 6, 215, 16);
-		
-		childPanel.add(nameChildLabel);
-		howManyChildrenLabel.setBounds(16, 34, 268, 44);
-		
-		childPanel.add(howManyChildrenLabel);
-		childrenComboBox.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				do_childrenComboBox_actionPerformed(e);
-			}
-		});
-		childrenComboBox.setBounds(296, 44, 74, 27);
-		childrenComboBox.setModel(new DefaultComboBoxModel(new String[] {"...", "One", "Two", "Three", "Four"}));
-		
-		childPanel.add(childrenComboBox);
-		tabbedPane.setBounds(6, 81, 494, 586);
-		
-		childPanel.add(tabbedPane);
-		
-		tabbedPane.addTab("Child 1", null, child1Panel, null);
-		child1Panel.setLayout(null);
-		child1NameLabel.setBounds(6, 8, 126, 16);
-		
-		child1Panel.add(child1NameLabel);
-		child1NameFTF.setBounds(133, 6, 321, 21);
-		
-		child1Panel.add(child1NameFTF);
-		child1GenderLabel.setBounds(66, 46, 55, 16);
-		
-		child1Panel.add(child1GenderLabel);
-		//button group for gender
-		gender1Group.add(female1Button);
-		female1Button.setBounds(131, 42, 76, 23);
-		child1Panel.add(female1Button);
-		gender1Group.add(male1Button);
-		male1Button.setBounds(248, 42, 74, 23);
-		child1Panel.add(male1Button);
-		gender1Group.add(other1Button);
-		other1Button.setBounds(361, 42, 82, 23);
-		child1Panel.add(other1Button);
 		//
-		child1BirthdayLabel.setBounds(60, 88, 61, 16);
 		
-		child1Panel.add(child1BirthdayLabel);
-		birthDay1FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthDay1FTF_focusLost(e);
-			}
-		});
-		birthDay1FTF.setBounds(166, 87, 46, 21);
+		//carries applicant name across all labels
+		applicantChildLabel.setBounds(6, 6, 111, 16);
+		childPanel.add(applicantChildLabel);
+		//
 		
-		child1Panel.add(birthDay1FTF);
-		child1DayLabel.setBounds(125, 88, 61, 16);
-		
-		child1Panel.add(child1DayLabel);
-		child1MonthLabel.setBounds(217, 89, 55, 16);
-		
-		child1Panel.add(child1MonthLabel);
-		birthMonth1FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthMonth1FTF_focusLost(e);
-			}
-		});
-		birthMonth1FTF.setBounds(268, 85, 44, 26);
-		
-		child1Panel.add(birthMonth1FTF);
-		child1YearLabel.setBounds(319, 90, 38, 16);
-		
-		child1Panel.add(child1YearLabel);
-		birthYear1FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthYear1FTF_focusLost(e);
-			}
-		});
-		birthYear1FTF.setBounds(364, 86, 61, 26);
-		
-		child1Panel.add(birthYear1FTF);
-		child1AgeLabel.setBounds(90, 119, 38, 16);
-		
-		child1Panel.add(child1AgeLabel);
+		//all of the masks for child 1
 		child1NameMask.setPlaceholderCharacter(' ');
 		child1NameMask.install(child1NameFTF);
 		child1DayMask.setPlaceholderCharacter(' ');
@@ -1036,48 +952,152 @@ public class ChodziutkoSACAPframe extends JFrame {
 		child1YearMask.install(birthYear1FTF);
 		child1ShoeMask.setPlaceholderCharacter(' ');
 		child1ShoeMask.install(child1ShoeFTF);
-		ageCalc1Label.setBounds(130, 119, 61, 16);
+		//
 		
+		//label for name of applicant
+		nameChildLabel.setBounds(117, 6, 215, 16);
+		childPanel.add(nameChildLabel);
+		//
+		
+		//label that asks how many children
+		howManyChildrenLabel.setBounds(16, 34, 268, 44);
+		childPanel.add(howManyChildrenLabel);
+		//
+		
+		//combo box that lists the numbers
+		childrenComboBox.setBounds(296, 44, 117, 27);
+		childrenComboBox.setModel(new DefaultComboBoxModel(new String[] {"...", "One", "Two", "Three", "Four"}));
+		childPanel.add(childrenComboBox);
+		//
+		
+		//add child 1 tabbed pane
+		tabbedPane.setBounds(6, 81, 494, 586);
+		childPanel.add(tabbedPane);
+		tabbedPane.addTab("Child 1", null, child1Panel, null);
+		child1Panel.setLayout(null);
+		//
+		
+		//label for child name
+		child1NameLabel.setBounds(6, 8, 126, 16);
+		child1Panel.add(child1NameLabel);
+		//
+		
+		//child name FTF
+		child1NameFTF.setBounds(133, 6, 321, 21);
+		child1Panel.add(child1NameFTF);
+		//
+		
+		//child 1 gender label
+		child1GenderLabel.setBounds(66, 46, 55, 16);
+		child1Panel.add(child1GenderLabel);
+		//
+		
+		//button group for child 1 gender
+		gender1Group.add(female1Button);
+		female1Button.setBounds(131, 42, 76, 23);
+		child1Panel.add(female1Button);
+		gender1Group.add(male1Button);
+		male1Button.setBounds(248, 42, 74, 23);
+		child1Panel.add(male1Button);
+		gender1Group.add(other1Button);
+		other1Button.setBounds(361, 42, 82, 23);
+		child1Panel.add(other1Button);
+		//
+		
+		//birthday: label for child 1
+		child1BirthdayLabel.setBounds(60, 88, 61, 16);
+		child1Panel.add(child1BirthdayLabel);
+		//
+		
+		//Day FTF for child 1
+		birthDay1FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthDay1FTF_focusLost(e);
+			}
+		});
+		birthDay1FTF.setBounds(166, 87, 46, 21);
+		child1Panel.add(birthDay1FTF);
+		//
+		
+		//Day: label for child 1
+		child1DayLabel.setBounds(125, 88, 61, 16);
+		child1Panel.add(child1DayLabel);
+		//
+		
+		//Month: label for child 1
+		child1MonthLabel.setBounds(217, 89, 55, 16);
+		child1Panel.add(child1MonthLabel);
+		//
+		
+		//Month FTF for child 1
+		birthMonth1FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthMonth1FTF_focusLost(e);
+			}
+		});
+		birthMonth1FTF.setBounds(268, 85, 44, 26);
+		child1Panel.add(birthMonth1FTF);
+		//
+		
+		//Year: label for child 1
+		child1YearLabel.setBounds(319, 90, 38, 16);
+		child1Panel.add(child1YearLabel);
+		//
+		
+		//Year FTF for child 1
+		birthYear1FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthYear1FTF_focusLost(e);
+			}
+		});
+		birthYear1FTF.setBounds(364, 86, 61, 26);
+		child1Panel.add(birthYear1FTF);
+		//
+		
+		//age: label for child 1
+		child1AgeLabel.setBounds(90, 119, 38, 16);
+		child1Panel.add(child1AgeLabel);
+		//
+		
+		//label that calculates age for child 1
+		ageCalc1Label.setBounds(130, 119, 61, 16);
 		child1Panel.add(ageCalc1Label);
+		//
+		
+		//clotthing combo box and label for child 1
 		child1ClothingComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
 		child1ClothingComboBox.setBounds(133, 149, 111, 27);
-		
 		child1Panel.add(child1ClothingComboBox);
 		child1ClothingLabel.setBounds(31, 154, 89, 16);
-		
 		child1Panel.add(child1ClothingLabel);
+		//
+		
+		//coat combo box and label for child 1
 		child1CoatComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
-		child1ShoeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Infant", "Toddler", "Child", "Adult"}));
 		child1CoatComboBox.setBounds(134, 186, 111, 27);
-		
 		child1Panel.add(child1CoatComboBox);
-		child1ShoeLabel.setBounds(53, 236, 81, 16);
-		
-		child1Panel.add(child1ShoeLabel);
 		child1CoatLabel.setBounds(55, 190, 74, 16);
-		
 		child1Panel.add(child1CoatLabel);
-		child1ShoeFTF.setBounds(138, 230, 52, 26);
+		//
 		
+		//shoe combo box and label for child 1
+		child1ShoeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Infant", "Toddler", "Child", "Adult"}));
+		child1ShoeLabel.setBounds(53, 236, 81, 16);
+		child1Panel.add(child1ShoeLabel);
+		child1ShoeFTF.setBounds(138, 230, 52, 26);
 		child1Panel.add(child1ShoeFTF);
 		child1ShoeComboBox.setBounds(200, 231, 114, 27);
-		
 		child1Panel.add(child1ShoeComboBox);
+		//
+		
+		//game systems for child 1
+		child1GameSystemsLabel.setToolTipText("Select more than one option by holding the CONTROL key and clicking the option.");
 		child1GameSystemsLabel.setBounds(8, 292, 267, 16);
-		
 		child1Panel.add(child1GameSystemsLabel);
-		child1InterestsLabel.setBounds(18, 391, 256, 16);
-		
-		child1Panel.add(child1InterestsLabel);
-		child1OtherInterestsLabel.setBounds(167, 489, 104, 16);
-		
-		child1Panel.add(child1OtherInterestsLabel);
-		child1OtherInterestsTextField.setColumns(10);
-		child1OtherInterestsTextField.setBounds(275, 484, 179, 26);
-		
-		child1Panel.add(child1OtherInterestsTextField);
 		child1GameSystemsScrollPane.setBounds(287, 292, 162, 70);
-		
 		child1Panel.add(child1GameSystemsScrollPane);
 		child1GameSystemsScrollPane.setViewportView(child1GameSystemsList);
 		child1GameSystemsList.setModel(new AbstractListModel() {
@@ -1089,8 +1109,18 @@ public class ChodziutkoSACAPframe extends JFrame {
 				return values[index];
 			}
 		});
-		child1InterestsScrollPanel.setBounds(286, 391, 162, 70);
+		//
 		
+		//all interests stuff for child 1
+		child1InterestsLabel.setToolTipText("Select more than one option by holding the CONTROL key and clicking the option.");
+		child1InterestsLabel.setBounds(18, 391, 256, 16);
+		child1Panel.add(child1InterestsLabel);
+		child1OtherInterestsLabel.setBounds(167, 489, 104, 16);
+		child1Panel.add(child1OtherInterestsLabel);
+		child1OtherInterestsTextField.setColumns(10);
+		child1OtherInterestsTextField.setBounds(275, 484, 179, 26);
+		child1Panel.add(child1OtherInterestsTextField);
+		child1InterestsScrollPanel.setBounds(286, 391, 162, 70);
 		child1Panel.add(child1InterestsScrollPanel);
 		child1InterestsScrollPanel.setViewportView(child1InterestsList);
 		child1InterestsList.setModel(new AbstractListModel() {
@@ -1102,6 +1132,532 @@ public class ChodziutkoSACAPframe extends JFrame {
 				return values[index];
 			}
 		});
+		//
+		
+		//panel for child 2
+		final JPanel child2Panel = new JPanel();
+    	tabbedPane.addTab("Child 2", null, child2Panel, null);
+		child2Panel.setLayout(null);
+		//
+		
+		//masks for child 2
+		child2NameMask.setPlaceholderCharacter(' ');
+		child2NameMask.install(child2NameFTF);
+		child2DayMask.setPlaceholderCharacter(' ');
+		child2DayMask.install(birthDay2FTF);
+		child2MonthMask.setPlaceholderCharacter(' ');
+		child2MonthMask.install(birthMonth2FTF);
+		child2YearMask.setPlaceholderCharacter(' ');
+		child2YearMask.install(birthYear2FTF);
+		child2ShoeMask.setPlaceholderCharacter(' ');
+		child2ShoeMask.install(child2ShoeFTF);
+		//
+		
+		//name: label for child 2
+		child2NameLabel.setBounds(6, 8, 126, 16);
+		child2Panel.add(child2NameLabel);
+		//
+		
+		//name FTF for child 2
+		child2NameFTF.setBounds(133, 6, 321, 21);
+		child2Panel.add(child2NameFTF);
+		//
+		
+		//Gender: label for child 2
+		child2GenderLabel.setBounds(66, 46, 55, 16);
+		child2Panel.add(child2GenderLabel);
+		//
+		
+		//gender group for child 2
+		gender2Group.add(female2Button);
+		female2Button.setBounds(131, 42, 76, 23);
+		child2Panel.add(female2Button);
+		gender2Group.add(male2Button);
+		male2Button.setBounds(248, 42, 74, 23);
+		child2Panel.add(male2Button);
+		gender2Group.add(other2Button);
+		other2Button.setBounds(361, 42, 82, 23);
+		child2Panel.add(other2Button);
+		//
+		
+		//birthday: label for child 2
+		child2BirthdayLabel.setBounds(60, 88, 61, 16);
+		child2Panel.add(child2BirthdayLabel);
+		//
+		
+		//birthday FTF for child 2
+		birthDay2FTF.setBounds(166, 87, 46, 21);
+		child2Panel.add(birthDay2FTF);
+		birthDay2FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthDay2FTF_focusLost(e);
+			}
+		});
+		//
+		
+		//day: label for child 2
+		child2DayLabel.setBounds(125, 88, 61, 16);
+		child2Panel.add(child2DayLabel);
+		//
+		
+		//month: label for child 2
+		child2MonthLabel.setBounds(217, 89, 55, 16);
+		child2Panel.add(child2MonthLabel);
+		//
+		
+		//month FTF for child 2
+		birthMonth2FTF.setBounds(268, 85, 44, 26);
+		child2Panel.add(birthMonth2FTF);
+		birthMonth2FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthYear2FTF_focusLost(e);
+			}
+		});
+		//
+		
+		//year: label for child 2
+		child2YearLabel.setBounds(319, 90, 38, 16);
+		child2Panel.add(child2YearLabel);
+		//
+		
+		//year FTF for child 2
+		birthYear2FTF.setBounds(364, 86, 61, 26);
+		child2Panel.add(birthYear2FTF);
+		birthYear2FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthYear2FTF_focusLost(e);
+			}
+		});
+		//
+		
+		//age: label for child 2
+		child2AgeLabel.setBounds(90, 119, 38, 16);
+		child2Panel.add(child2AgeLabel);
+		//
+		
+		//label that holds age after calculated for child 2
+		ageCalc2Label.setBounds(130, 119, 61, 16);
+		child2Panel.add(ageCalc2Label);
+		//
+		
+		//game system info for child 2
+		child2GameSystemsScrollPane.setBounds(287, 292, 162, 70);
+		child2GameSystemsLabel.setToolTipText("Select more than one option by holding the CONTROL key and clicking the option.");
+		child2Panel.add(child2GameSystemsScrollPane);
+		child2GameSystemsScrollPane.setViewportView(child2GameSystemsList);
+		child2GameSystemsList.setModel(new AbstractListModel() {
+			String[] values = new String[] {"Xbox 360", "Xbox One", "PS3", "PS4", "PSP", "Computer", "Wii", "Wii U", "Nintendo DS", "Nintendo 3DS"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		child2GameSystemsLabel.setBounds(8, 292, 267, 16);
+		child2Panel.add(child2GameSystemsLabel);
+		//
+		
+		//clothing info for child 2
+		child2ClothingComboBox.setBounds(133, 149, 111, 27);	
+		child2Panel.add(child2ClothingComboBox);
+		child2ClothingLabel.setBounds(31, 154, 89, 16);
+		child2Panel.add(child2ClothingLabel);
+		child2ClothingComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
+		child2CoatComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
+		//
+		
+		//coat info for child 2
+		child2CoatComboBox.setBounds(134, 186, 111, 27);
+		child2Panel.add(child2CoatComboBox);
+		child2CoatLabel.setBounds(55, 190, 74, 16);
+		child2Panel.add(child2CoatLabel);child2ShoeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Infant", "Toddler", "Child", "Adult"}));
+		//
+		
+		//shoe info for child 2
+		child2ShoeLabel.setBounds(53, 236, 81, 16);
+		child2Panel.add(child2ShoeLabel);
+		child2ShoeFTF.setBounds(138, 230, 52, 26);
+		child2Panel.add(child2ShoeFTF);
+		child2ShoeComboBox.setBounds(200, 231, 114, 27);
+		child2Panel.add(child2ShoeComboBox);
+		//
+		
+		//interests stuff for child 2
+		child2InterestsLabel.setToolTipText("Select more than one option by holding the CONTROL key and clicking the option.");
+		child2InterestsLabel.setBounds(18, 391, 256, 16);
+		child2Panel.add(child2InterestsLabel);
+		child2OtherInterestsLabel.setBounds(167, 489, 104, 16);
+		child2Panel.add(child2OtherInterestsLabel);
+		child2OtherInterestsTextField.setColumns(10);
+		child2OtherInterestsTextField.setBounds(275, 484, 179, 26);
+		child2Panel.add(child2OtherInterestsTextField);
+		child2InterestsScrollPanel.setBounds(286, 391, 162, 70);
+		child2Panel.add(child2InterestsScrollPanel);
+		child2InterestsScrollPanel.setViewportView(child2InterestsList);
+		child2InterestsList.setModel(new AbstractListModel() {
+			String[] values = new String[] {"Arts/Crafts", "Drawing", "Action Heroes", "Cars/Trucks", "Planes/Trains", "Music", "Construction", "Lego/Duplo", "Outdoors", "Dolls", "Sports"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		//
+		
+		//child 3 panel
+		final JPanel child3Panel = new JPanel();
+		tabbedPane.addTab("Child 3", null, child3Panel, null);
+		child3Panel.setLayout(null);
+		//
+		
+		//masks for child 3
+		child3NameMask.setPlaceholderCharacter(' ');
+		child3NameMask.install(child3NameFTF);
+		child3DayMask.setPlaceholderCharacter(' ');
+		child3DayMask.install(birthDay3FTF);
+		child3MonthMask.setPlaceholderCharacter(' ');
+		child3MonthMask.install(birthMonth3FTF);
+		child3YearMask.setPlaceholderCharacter(' ');
+		child3YearMask.install(birthYear3FTF);
+		child3ShoeMask.setPlaceholderCharacter(' ');
+		child3ShoeMask.install(child3ShoeFTF);
+		//
+		
+		//name: label for child 3
+		child3NameLabel.setBounds(6, 8, 126, 16);
+	    child3Panel.add(child3NameLabel);
+	    //
+	    
+	    //name FTF for child 3
+		child3NameFTF.setBounds(133, 6, 321, 21);
+		child3Panel.add(child3NameFTF);
+		//
+		
+		//gendeR: label for child 3
+		child3GenderLabel.setBounds(66, 46, 55, 16);
+		child3Panel.add(child3GenderLabel);
+		//
+		
+		//gender button group for child 3
+		gender3Group.add(female3Button);
+		female3Button.setBounds(131, 42, 76, 23);
+		child3Panel.add(female3Button);
+		gender3Group.add(male3Button);
+		male3Button.setBounds(248, 42, 74, 23);
+		child3Panel.add(male3Button);
+		gender3Group.add(other3Button);
+		other3Button.setBounds(361, 42, 82, 23);
+		child3Panel.add(other3Button);
+		//
+		
+		//birthday: label for child 3
+		child3BirthdayLabel.setBounds(60, 88, 61, 16);
+		child3Panel.add(child3BirthdayLabel);
+		//
+		
+		//day FTF for child 3
+		birthDay3FTF.setBounds(166, 87, 46, 21);
+		child3Panel.add(birthDay3FTF);
+		birthDay3FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthDay3FTF_focusLost(e);
+			}
+		});
+		//
+		
+		//day: label for child 3
+		child3DayLabel.setBounds(125, 88, 61, 16);
+		child3Panel.add(child3DayLabel);
+		//
+		
+		//month: label for child 3
+		child3MonthLabel.setBounds(217, 89, 55, 16);
+		child3Panel.add(child3MonthLabel);
+		//
+		
+		//month FTF for child 3
+		birthMonth3FTF.setBounds(268, 85, 44, 26);
+		child3Panel.add(birthMonth3FTF);
+		birthMonth3FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthMonth3FTF_focusLost(e);
+			}
+		});
+		//
+		
+		//year: label for child 3
+		child3YearLabel.setBounds(319, 90, 38, 16);
+		child3Panel.add(child3YearLabel);
+		//
+		
+		//year FTF for child 3
+		birthYear3FTF.setBounds(364, 86, 61, 26);
+		child3Panel.add(birthYear3FTF);
+		birthYear3FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthYear3FTF_focusLost(e);
+			}
+		});
+		//
+		
+		//age: label for child 3
+		child3AgeLabel.setBounds(90, 119, 38, 16);
+		child3Panel.add(child3AgeLabel);
+		//
+		
+		//calc age label for child 3
+		ageCalc3Label.setBounds(130, 119, 61, 16);
+		child3Panel.add(ageCalc3Label);
+		//
+		
+		//clothing info for child 3
+		child3ClothingComboBox.setBounds(133, 149, 111, 27);
+		child3Panel.add(child3ClothingComboBox);
+		child3ClothingLabel.setBounds(31, 154, 89, 16);
+		child3Panel.add(child3ClothingLabel);
+		child3ClothingComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
+		//
+		
+		//coat info for child 3
+		child3CoatComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
+		child3CoatComboBox.setBounds(134, 186, 111, 27);
+		child3Panel.add(child3CoatComboBox);
+		child3CoatLabel.setBounds(55, 190, 74, 16);
+		child3Panel.add(child3CoatLabel);
+		//
+		
+		//shoe info for child 3
+		child3ShoeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Infant", "Toddler", "Child", "Adult"}));
+		child3ShoeLabel.setBounds(53, 236, 81, 16);
+		child3Panel.add(child3ShoeLabel);
+		child3ShoeFTF.setBounds(138, 230, 52, 26);
+		child3Panel.add(child3ShoeFTF);
+		child3ShoeComboBox.setBounds(200, 231, 114, 27);
+		child3Panel.add(child3ShoeComboBox);
+		//
+		
+		//game systems info for child 3
+		child3GameSystemsScrollPane.setBounds(287, 292, 162, 70);
+		child3GameSystemsLabel.setToolTipText("Select more than one option by holding the CONTROL key and clicking the option.");
+		child3Panel.add(child3GameSystemsScrollPane);
+		child3GameSystemsScrollPane.setViewportView(child3GameSystemsList);
+		child3GameSystemsLabel.setBounds(8, 292, 267, 16);
+		child3Panel.add(child3GameSystemsLabel);
+		child3GameSystemsList.setModel(new AbstractListModel() {
+			String[] values = new String[] {"Xbox 360", "Xbox One", "PS3", "PS4", "PSP", "Computer", "Wii", "Wii U", "Nintendo DS", "Nintendo 3DS"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		//
+		
+		//interests info for child 3
+		child3InterestsLabel.setToolTipText("Select more than one option by holding the CONTROL key and clicking the option.");
+		child3InterestsLabel.setBounds(18, 391, 256, 16);
+		child3Panel.add(child3InterestsLabel);
+		child3OtherInterestsLabel.setBounds(167, 489, 104, 16);
+		child3Panel.add(child3OtherInterestsLabel);
+		child3OtherInterestsTextField.setColumns(10);
+		child3OtherInterestsTextField.setBounds(275, 484, 179, 26);
+		child3Panel.add(child3OtherInterestsTextField);
+		child3InterestsScrollPanel.setBounds(286, 391, 162, 70);
+		child3Panel.add(child3InterestsScrollPanel);
+		child3InterestsScrollPanel.setViewportView(child3InterestsList);
+		child3InterestsList.setModel(new AbstractListModel() {
+			String[] values = new String[] {"Arts/Crafts", "Drawing", "Action Heroes", "Cars/Trucks", "Planes/Trains", "Music", "Construction", "Lego/Duplo", "Outdoors", "Dolls", "Sports"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		//
+		
+		//child 4 panel finally
+		final JPanel child4Panel = new JPanel();
+		tabbedPane.addTab("Child 4", null, child4Panel, null);
+		child4Panel.setLayout(null);
+		//
+		
+		//child 4 masks
+		child4NameMask.setPlaceholderCharacter(' ');
+		child4NameMask.install(child4NameFTF);
+		child4DayMask.setPlaceholderCharacter(' ');
+		child4DayMask.install(birthDay4FTF);
+		child4MonthMask.setPlaceholderCharacter(' ');
+		child4MonthMask.install(birthMonth4FTF);
+		child4YearMask.setPlaceholderCharacter(' ');
+		child4YearMask.install(birthYear4FTF);
+		child4ShoeMask.setPlaceholderCharacter(' ');
+		child4ShoeMask.install(child4ShoeFTF);
+		//
+		
+		//name: label for child 4
+		child4NameLabel.setBounds(6, 8, 126, 16);
+		child4Panel.add(child4NameLabel);
+		//
+		
+		//name FTF for child 4
+		child4NameFTF.setBounds(133, 6, 321, 21);
+		child4Panel.add(child4NameFTF);
+		//
+		
+		//gender button group for child 4
+		child4GenderLabel.setBounds(66, 46, 55, 16);
+		child4Panel.add(child4GenderLabel);
+		female4Button.setBounds(131, 42, 76, 23);	
+		gender4Group.add(female4Button);
+		female4Button.setBounds(131, 42, 76, 23);
+		child4Panel.add(female4Button);
+		gender4Group.add(male4Button);
+		male4Button.setBounds(248, 42, 74, 23);
+		child4Panel.add(male4Button);
+		gender4Group.add(other4Button);
+		other4Button.setBounds(361, 42, 82, 23);
+		child4Panel.add(other4Button);
+		//
+		
+		//birthday: label for child 4
+		child4Panel.add(child4BirthdayLabel);
+		child4BirthdayLabel.setBounds(60, 88, 61, 16);
+		//
+		
+		//day FTF for child 4
+		birthDay4FTF.setBounds(166, 87, 46, 21);
+		child4Panel.add(birthDay4FTF);
+		birthDay4FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthDay4FTF_focusLost(e);
+			}
+		});
+		//
+		
+		//day: label for child 4
+		child4DayLabel.setBounds(125, 88, 61, 16);
+		child4Panel.add(child4DayLabel);
+		//
+		
+		//month: label for child 4
+		child4MonthLabel.setBounds(217, 89, 55, 16);
+		child4Panel.add(child4MonthLabel);
+		//
+		
+		//month FTF for child 4
+		birthMonth4FTF.setBounds(268, 85, 44, 26);
+		child4Panel.add(birthMonth4FTF);
+		birthMonth4FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthMonth4FTF_focusLost(e);
+			}
+		});
+		//
+		
+		//yar: label for child 4
+		child4YearLabel.setBounds(319, 90, 38, 16);
+		child4Panel.add(child4YearLabel);
+		//
+		
+		//year FTF for child 4
+		birthYear4FTF.setBounds(364, 86, 61, 26);
+		child4Panel.add(birthYear4FTF);
+		birthYear4FTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				do_birthYear4FTF_focusLost(e);
+			}
+		});
+		//
+		
+		//age: label for child 4
+		child4AgeLabel.setBounds(90, 119, 38, 16);
+		child4Panel.add(child4AgeLabel);
+		//
+		
+		//age calc label for child 4
+		ageCalc4Label.setBounds(130, 119, 61, 16);
+		child4Panel.add(ageCalc4Label);
+		//
+		
+		//clothing info for child 4
+		child4ClothingComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
+		child4ClothingComboBox.setBounds(133, 149, 111, 27);
+		child4Panel.add(child4ClothingComboBox);
+		child4ClothingLabel.setBounds(31, 154, 89, 16);
+		child4Panel.add(child4ClothingLabel);
+		//
+		
+		//game systems info for child 4
+		child4GameSystemsScrollPane.setBounds(287, 292, 162, 70);
+		child4Panel.add(child4GameSystemsScrollPane);
+		child4GameSystemsScrollPane.setViewportView(child4GameSystemsList);
+		child4GameSystemsList.setModel(new AbstractListModel() {
+			String[] values = new String[] {"Xbox 360", "Xbox One", "PS3", "PS4", "PSP", "Computer", "Wii", "Wii U", "Nintendo DS", "Nintendo 3DS"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		child4GameSystemsLabel.setToolTipText("Select more than one option by holding the CONTROL key and clicking the option.");
+		child4GameSystemsLabel.setBounds(8, 292, 267, 16);
+		child4Panel.add(child4GameSystemsLabel);
+		//
+
+		//coat info for child 4
+		child4CoatComboBox.setBounds(134, 186, 111, 27);
+		child4Panel.add(child4CoatComboBox);
+		child4CoatComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
+		child4CoatLabel.setBounds(55, 190, 74, 16);
+		child4Panel.add(child4CoatLabel);
+		//
+		
+		//show info for child 4
+		child4ShoeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Infant", "Toddler", "Child", "Adult"}));
+		child4ShoeLabel.setBounds(53, 236, 81, 16);
+		child4Panel.add(child4ShoeLabel);
+		child4ShoeFTF.setBounds(138, 230, 52, 26);
+		child4Panel.add(child4ShoeFTF);
+		child4ShoeComboBox.setBounds(200, 231, 114, 27);
+		child4Panel.add(child4ShoeComboBox);
+		//
+		
+		//interests info for child 4
+		child4InterestsLabel.setToolTipText("Select more than one option by holding the CONTROL key and clicking the option.");
+		child4Panel.add(child4InterestsLabel);
+		child4OtherInterestsTextField.setColumns(10);
+		child4OtherInterestsTextField.setBounds(275, 484, 179, 26);
+		child4InterestsLabel.setBounds(18, 391, 256, 16);
+		child4OtherInterestsLabel.setBounds(167, 489, 104, 16);
+		child4Panel.add(child4OtherInterestsLabel);
+		child4Panel.add(child4OtherInterestsTextField);
+		child4InterestsScrollPanel.setBounds(286, 391, 162, 70);
+		child4Panel.add(child4InterestsScrollPanel);
+		child4InterestsScrollPanel.setViewportView(child4InterestsList);
+		child4InterestsList.setModel(new AbstractListModel() {
+			String[] values = new String[] {"Arts/Crafts", "Drawing", "Action Heroes", "Cars/Trucks", "Planes/Trains", "Music", "Construction", "Lego/Duplo", "Outdoors", "Dolls", "Sports"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		//
 	}
 	
 	//when the specific text field loses focus, update the total box
@@ -1142,10 +1698,9 @@ public class ChodziutkoSACAPframe extends JFrame {
 	protected void do_loansFTF_focusLost(FocusEvent e) {
 		updateExpensesTotal();
 	}
-	//
 	
 	
-	//this takes each individual income and then totals them all
+	/**this takes each individual income and then totals them all**/
 	private void updateIncomeTotal() {
 		int employment = Integer.parseInt(employmentFTF.getText().trim());
 		int childSupport = Integer.parseInt(childSupportFTF.getText().trim());
@@ -1159,23 +1714,9 @@ public class ChodziutkoSACAPframe extends JFrame {
 		totalText = Integer.toString(total);
 		totalIncomeTextField.setText(totalText);
 		updateNetIncome();
-		/*
-		double employment = ((Number)employmentFTF.getValue()).doubleValue();
-		double childSupport = ((Number)childSupportFTF.getValue()).doubleValue();
-		double ontarioWorks = ((Number)ontarioFTF.getValue()).doubleValue();
-		double ei = ((Number)eiFTF.getValue()).doubleValue();
-		double pension = ((Number)pensionFTF.getValue()).doubleValue();
-		double childTax = ((Number)childTaxFTF.getValue()).doubleValue();
-		double total = 0;
-		String totalText = "";
-		total = employment + childSupport + ontarioWorks + ei + pension + childTax;
-		totalText = Double.toString(total);
-		totalTextField.setText(totalText);	
-		*/
 		}
-	//
 	
-	//updates the expenses total
+	/** updates expenses total based off the expenses FTF**/
 	private void updateExpensesTotal() {
 		int gas = Integer.parseInt(gasHydroFTF.getText().trim());
 		int childCare = Integer.parseInt(childCareFTF.getText().trim());
@@ -1191,19 +1732,9 @@ public class ChodziutkoSACAPframe extends JFrame {
 		totalExpensesTextField.setForeground(Color.RED);
 		totalExpensesTextField.setText(totalText);
 		updateNetIncome();
-		/*if(total > 0) {
-			totalExpensesTextField.setForeground(Color.RED);
-			totalExpensesTextField.setText(totalText);
-			updateNetIncome();
-		} else {
-			totalNetIncomeLabel.setForeground(Color.BLACK);
-			totalExpensesTextField.setText(totalText);
-			updateNetIncome();
-		}*/
 		}
-	//
 	
-	//updates net income label
+	/** updates the net income label based off the income and expenses**/
 	private void updateNetIncome() {
 		int income = Integer.parseInt(totalIncomeTextField.getText().trim());
 		int expenses = Integer.parseInt(totalExpensesTextField.getText().trim());
@@ -1220,13 +1751,12 @@ public class ChodziutkoSACAPframe extends JFrame {
 			totalNetIncomeLabel.setText(totalText);	
 		}
 		}
-	//
 	
-	//method determines if fname/lname fields are empty and if not, updates name across labels
+	/**method determines if lname field is empty and if not, updates name across labels**/
 	private void name() {
-		if(fNameFTF.getText().trim().isEmpty()/* || lNameFTF.getText().trim().isEmpty()*/) {
-			JOptionPane.showMessageDialog(this, "Please enter your name!", "Empty!", JOptionPane.INFORMATION_MESSAGE);
-			fNameFTF.grabFocus();
+		if(lNameFTF.getText().trim().isEmpty()) {
+			JOptionPane.showMessageDialog(this, "Please enter your last name!", "Empty!", JOptionPane.INFORMATION_MESSAGE);
+			lNameFTF.grabFocus();
 			tabbedPane.setSelectedIndex(0);
 		} else {
 			nameLabel.setForeground(Color.black);
@@ -1235,17 +1765,13 @@ public class ChodziutkoSACAPframe extends JFrame {
 			nameChildLabel.setText(fNameFTF.getText().toString().trim() + " " + lNameFTF.getText().toString().trim());
 		}
 	}
-	//
+
 	
-	//updates the name
-	protected void do_fNameFTF_focusLost(FocusEvent e) {
+	//updates the name across all fields
+	protected void do_lNameFTF_focusLost(FocusEvent e) {
 		name();
 	}
-	protected void do_lNameFTF_focusLost(FocusEvent e) {
-		//name();
-	}
-	protected void do_fileMenu_actionPerformed(ActionEvent e) {
-	}
+	
 	
 	//this gives the option to exit the program
 	protected void do_exitOption_actionPerformed(ActionEvent e) {
@@ -1255,10 +1781,10 @@ public class ChodziutkoSACAPframe extends JFrame {
 				this.dispose();
 			}
 	}
-	//
+	
 	
 
-	//set color of expenses to red if it is not 0
+	/** sets the color of expenses to red if the number isn't 0**/
 	protected void setColor() {
 		int gas = Integer.parseInt(gasHydroFTF.getText().trim());
 		int childCare = Integer.parseInt(childCareFTF.getText().trim());
@@ -1298,9 +1824,8 @@ public class ChodziutkoSACAPframe extends JFrame {
 		}
 		
 	}
-	//
 	
-	//gives the option to reset all of the text fields
+	/** resets all of the fields to empty**/
 	protected void do_newFormOption_actionPerformed(ActionEvent e) {
 		int choice = 0;
 		choice = JOptionPane.showConfirmDialog(
@@ -1309,6 +1834,7 @@ public class ChodziutkoSACAPframe extends JFrame {
 			    "Start Over",
 			    JOptionPane.YES_NO_OPTION);
 			if(choice == 0) {
+				//probably a better way of doing this, but not all of us can be good at programming
 				fNameFTF.setText("");
 				lNameFTF.setText("");
 				employmentFTF.setText("0");
@@ -1337,15 +1863,84 @@ public class ChodziutkoSACAPframe extends JFrame {
 				pensionFTF.setText("0");
 				childTaxFTF.setText("0");
 				nameLabel.setText("");
-				nameChildLabel.setText("");
+				child1NameFTF.setText("");
+				child2NameFTF.setText("");
+				child3NameFTF.setText("");
+				child4NameFTF.setText("");
+				birthDay1FTF.setText("1");
+				birthMonth1FTF.setText("1");
+				birthYear1FTF.setText("1990");
+				birthDay2FTF.setText("1");
+				birthMonth2FTF.setText("1");
+				birthYear2FTF.setText("1990");
+				birthDay3FTF.setText("1");
+				birthMonth3FTF.setText("1");
+				birthYear3FTF.setText("1990");
+				birthDay4FTF.setText("1");
+				birthMonth4FTF.setText("1");
+				birthYear4FTF.setText("1990");
+				ageCalc1Label.setText("");
+				ageCalc2Label.setText("");
+				ageCalc3Label.setText("");
+				ageCalc4Label.setText("");
+				totalNetIncomeLabel.setText("");
+				gender1Group.clearSelection();
+				gender2Group.clearSelection();
+				gender3Group.clearSelection();
+				gender4Group.clearSelection();
+				rentMortgageGroup.clearSelection();
+				transitGasGroup.clearSelection();
+				child1CoatComboBox.setSelectedIndex(0);
+				child1ClothingComboBox.setSelectedIndex(0);
+				child1ShoeComboBox.setSelectedIndex(0);
+				child2CoatComboBox.setSelectedIndex(0);
+				child2ClothingComboBox.setSelectedIndex(0);
+				child2ShoeComboBox.setSelectedIndex(0);
+				child3CoatComboBox.setSelectedIndex(0);
+				child3ClothingComboBox.setSelectedIndex(0);
+				child3ShoeComboBox.setSelectedIndex(0);
+				child4CoatComboBox.setSelectedIndex(0);
+				child4ClothingComboBox.setSelectedIndex(0);
+				child4ShoeComboBox.setSelectedIndex(0);
+				child1OtherInterestsTextField.setText("");
+				child2OtherInterestsTextField.setText("");
+				child3OtherInterestsTextField.setText("");
+				child4OtherInterestsTextField.setText("");
+				child1ShoeFTF.setText("");
+				child2ShoeFTF.setText("");
+				child3ShoeFTF.setText("");
+				child4ShoeFTF.setText("");
+				child1GameSystemsList.clearSelection();
+				child2GameSystemsList.clearSelection();
+				child3GameSystemsList.clearSelection();
+				child4GameSystemsList.clearSelection();
+				child1InterestsList.clearSelection();
+				child2InterestsList.clearSelection();
+				child3InterestsList.clearSelection();
+				child4InterestsList.clearSelection();
+				countyList.clearSelection();
+				rentFTF.setForeground(Color.BLACK);
+				gasHydroFTF.setForeground(Color.BLACK);
+				loansFTF.setForeground(Color.BLACK);
+				phoneTVFTF.setForeground(Color.BLACK);
+				childCareFTF.setForeground(Color.BLACK);
+				transportFTF.setForeground(Color.BLACK);
+				totalExpensesTextField.setText("0");
+				totalExpensesTextField.setForeground(Color.BLACK);
+				totalIncomeTextField.setText("0");
+				totalIncomeTextField.setForeground(Color.BLACK);
 			}
 	}
 	
-	//the number stands for each child, this would be for child one to get their age
+	/** these methods all calculate the birthday of the child and validates input
+	 * I also probably could have done this better as a method 
+	 * but i was very stressy spaghetti and this is the only thing i could think of
+	 * **/
 	protected void birthday1() {
 		int day1 = Integer.parseInt(birthDay1FTF.getText().trim());
 		int month1 = Integer.parseInt(birthMonth1FTF.getText().trim());
 		int year1 = Integer.parseInt(birthYear1FTF.getText().trim());
+		//checks if day, month, and year is valid, resets to default if it is not
 		if (day1 > 31) {
 			birthDay1FTF.setText("1");
 			ageCalc1Label.setText("");
@@ -1355,21 +1950,23 @@ public class ChodziutkoSACAPframe extends JFrame {
 			ageCalc1Label.setText("");
 			JOptionPane.showMessageDialog(this, "Please enter a valid date!");
 		} else if (year1 > 2019 || year1 < 1920) {
-			birthMonth1FTF.setText("1990");
+			birthYear1FTF.setText("1990");
 			ageCalc1Label.setText("");
 			JOptionPane.showMessageDialog(this, "Please enter a valid date!");
 		}else {
-		LocalDate today = LocalDate.now();                          //Today's date
-		LocalDate birthday = LocalDate.of(year1, month1, day1);  //Birth date 
-		Period p = Period.between(birthday, today);
-		String age = Integer.toString(p.getYears());
-		ageCalc1Label.setText(age);
+			//otherwise do the calculation and update the date
+			LocalDate today = LocalDate.now();                          //Today's date
+			LocalDate birthday = LocalDate.of(year1, month1, day1);  //Birth date 
+			Period p = Period.between(birthday, today);
+			String age = Integer.toString(p.getYears());
+			ageCalc1Label.setText(age);
 		}
 	}
 	protected void birthday2() {
 		int day2 = Integer.parseInt(birthDay2FTF.getText().trim());
 		int month2 = Integer.parseInt(birthMonth2FTF.getText().trim());
 		int year2 = Integer.parseInt(birthYear2FTF.getText().trim());
+		//checks if day, month, and year is valid, resets to default if it is not
 		if (day2 > 31) {
 			birthDay2FTF.setText("1");
 			ageCalc2Label.setText("");
@@ -1379,21 +1976,23 @@ public class ChodziutkoSACAPframe extends JFrame {
 			ageCalc2Label.setText("");
 			JOptionPane.showMessageDialog(this, "Please enter a valid date!");
 		} else if (year2 > 2019 || year2 < 1920) {
-			birthMonth2FTF.setText("1990");
+			birthYear2FTF.setText("1990");
 			ageCalc2Label.setText("");
 			JOptionPane.showMessageDialog(this, "Please enter a valid date!");
-		}else {
-		LocalDate today = LocalDate.now();                          //Today's date
-		LocalDate birthday = LocalDate.of(year2, month2, day2);  //Birth date 
-		Period p = Period.between(birthday, today);
-		String age = Integer.toString(p.getYears());
-		ageCalc2Label.setText(age);
+		} else {
+			//otherwise do the calculation and update the date
+			LocalDate today = LocalDate.now();                          //Today's date
+			LocalDate birthday = LocalDate.of(year2, month2, day2);  //Birth date 
+			Period p = Period.between(birthday, today);
+			String age = Integer.toString(p.getYears());
+			ageCalc2Label.setText(age);
 		}
-}
+	}
 	protected void birthday3() {
 		int day3 = Integer.parseInt(birthDay3FTF.getText().trim());
 		int month3 = Integer.parseInt(birthMonth3FTF.getText().trim());
 		int year3 = Integer.parseInt(birthYear3FTF.getText().trim());
+		//checks if day, month, and year is valid, resets to default if it is not
 		if (day3 > 31) {
 			birthDay3FTF.setText("1");
 			ageCalc3Label.setText("");
@@ -1403,21 +2002,23 @@ public class ChodziutkoSACAPframe extends JFrame {
 			ageCalc3Label.setText("");
 			JOptionPane.showMessageDialog(this, "Please enter a valid date!");
 		} else if (year3 > 2019 || year3 < 1920) {
-			birthMonth3FTF.setText("1990");
+			birthYear3FTF.setText("1990");
 			ageCalc3Label.setText("");
 			JOptionPane.showMessageDialog(this, "Please enter a valid date!");
-		}else {
-		LocalDate today = LocalDate.now();                          //Today's date
-		LocalDate birthday = LocalDate.of(year3, month3, day3);  //Birth date 
-		Period p = Period.between(birthday, today);
-		String age = Integer.toString(p.getYears());
-		ageCalc3Label.setText(age);
+		} else {
+			//otherwise do the calculation and update the date
+			LocalDate today = LocalDate.now();                          //Today's date
+			LocalDate birthday = LocalDate.of(year3, month3, day3);  //Birth date 
+			Period p = Period.between(birthday, today);
+			String age = Integer.toString(p.getYears());
+			ageCalc3Label.setText(age);
 		}
 	}
 	protected void birthday4() {
 		int day4 = Integer.parseInt(birthDay4FTF.getText().trim());
 		int month4 = Integer.parseInt(birthMonth4FTF.getText().trim());
 		int year4 = Integer.parseInt(birthYear4FTF.getText().trim());
+		//checks if day, month, and year is valid, resets to default if it is not
 		if (day4 > 31) {
 			birthDay4FTF.setText("1");
 			ageCalc4Label.setText("");
@@ -1427,17 +2028,20 @@ public class ChodziutkoSACAPframe extends JFrame {
 			ageCalc4Label.setText("");
 			JOptionPane.showMessageDialog(this, "Please enter a valid date!");
 		} else if (year4 > 2019 || year4 < 1920) {
-			birthMonth4FTF.setText("1990");
+			birthYear4FTF.setText("1990");
 			ageCalc4Label.setText("");
 			JOptionPane.showMessageDialog(this, "Please enter a valid date!");
-		}else {
-		LocalDate today = LocalDate.now();                          //Today's date
-		LocalDate birthday = LocalDate.of(year4, month4, day4);  //Birth date 
-		Period p = Period.between(birthday, today);
-		String age = Integer.toString(p.getYears());
-		ageCalc4Label.setText(age);
+		} else {
+			//otherwise do the calculation and update the date
+			LocalDate today = LocalDate.now();                          //Today's date
+			LocalDate birthday = LocalDate.of(year4, month4, day4);  //Birth date 
+			Period p = Period.between(birthday, today);
+			String age = Integer.toString(p.getYears());
+			ageCalc4Label.setText(age);
 		}
 	}
+
+	/** these all call the above birthday calculation depending on what loses focus**/
 	protected void do_birthDay1FTF_focusLost(FocusEvent e) {
 		birthday1();
 	}
@@ -1475,461 +2079,9 @@ public class ChodziutkoSACAPframe extends JFrame {
 		birthday4();
 	}
 	
-	
-	//this adds panels as we need them
-	protected void do_childrenComboBox_actionPerformed(ActionEvent e) {
-		JComboBox cb = (JComboBox)e.getSource();
-        String choice = cb.getSelectedItem().toString();
-        if(choice.toString().equals("Two")){
-        	panelTwo();
-        }
-        if(choice.toString().equals("Three")) {
-        	panelTwo();
-        	panelThree();
-        }
-        if(choice.toString().equals("Four")) {
-        	panelTwo();
-        	panelThree();
-        	panelFour();
-        }
-			
-		}
-
-	
-	
-	
-	/////////////////////////////////////////
-	//& heres all of the panels as methods//
-	///////////////////////////////////////
-	protected void panelTwo() {
-		final JPanel child2Panel = new JPanel();
-    	tabbedPane.addTab("Child 2", null, child2Panel, null);
-		child2Panel.setLayout(null);
-		child2CoatComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
-		child2ShoeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Infant", "Toddler", "Child", "Adult"}));
-		child2NameMask.setPlaceholderCharacter(' ');
-		child2NameMask.install(child2NameFTF);
-		child2DayMask.setPlaceholderCharacter(' ');
-		child2DayMask.install(birthDay2FTF);
-		child2MonthMask.setPlaceholderCharacter(' ');
-		child2MonthMask.install(birthMonth2FTF);
-		child2YearMask.setPlaceholderCharacter(' ');
-		child2YearMask.install(birthYear2FTF);
-		child2ShoeMask.setPlaceholderCharacter(' ');
-		child2ShoeMask.install(child2ShoeFTF);
-		child2NameLabel.setBounds(6, 8, 126, 16);
-		
-		child2Panel.add(child2NameLabel);
-		child2NameFTF.setBounds(133, 6, 321, 21);
-		
-		child2Panel.add(child2NameFTF);
-		child2GenderLabel.setBounds(66, 46, 55, 16);
-		
-		child2Panel.add(child2GenderLabel);
-		//
-		gender2Group.add(female2Button);
-		female2Button.setBounds(131, 42, 76, 23);
-		child2Panel.add(female2Button);
-		gender2Group.add(male2Button);
-		male2Button.setBounds(248, 42, 74, 23);
-		child2Panel.add(male2Button);
-		gender2Group.add(other2Button);
-		other2Button.setBounds(361, 42, 82, 23);
-		child2Panel.add(other2Button);
-		//
-		child2BirthdayLabel.setBounds(60, 88, 61, 16);
-		
-		child2Panel.add(child2BirthdayLabel);
-		birthDay2FTF.setBounds(166, 87, 46, 21);
-		
-		child2Panel.add(birthDay2FTF);
-		child2DayLabel.setBounds(125, 88, 61, 16);
-		
-		child2Panel.add(child2DayLabel);
-		child2MonthLabel.setBounds(217, 89, 55, 16);
-		
-		child2Panel.add(child2MonthLabel);
-		birthMonth2FTF.setBounds(268, 85, 44, 26);
-		
-		child2Panel.add(birthMonth2FTF);
-		child2YearLabel.setBounds(319, 90, 38, 16);
-		
-		child2Panel.add(child2YearLabel);
-		birthYear2FTF.setBounds(364, 86, 61, 26);
-		
-		child2Panel.add(birthYear2FTF);
-		child2AgeLabel.setBounds(90, 119, 38, 16);
-		
-		child2Panel.add(child2AgeLabel);
-		ageCalc2Label.setBounds(130, 119, 61, 16);
-		
-		child2Panel.add(ageCalc2Label);
-		child2GameSystemsScrollPane.setBounds(287, 292, 162, 70);
-		
-		child2Panel.add(child2GameSystemsScrollPane);
-		child2GameSystemsScrollPane.setViewportView(child2GameSystemsList);
-		child2GameSystemsList.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Xbox 360", "Xbox One", "PS3", "PS4", "PSP", "Computer", "Wii", "Wii U", "Nintendo DS", "Nintendo 3DS"};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-		child2ClothingComboBox.setBounds(133, 149, 111, 27);
-		birthYear2FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthYear2FTF_focusLost(e);
-			}
-		});
-		birthMonth2FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthYear2FTF_focusLost(e);
-			}
-		});
-		birthDay2FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthDay2FTF_focusLost(e);
-			}
-		});
-		
-		child2Panel.add(child2ClothingComboBox);
-		child2ClothingLabel.setBounds(31, 154, 89, 16);
-		
-		child2Panel.add(child2ClothingLabel);
-		child2ClothingComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
-		child2CoatComboBox.setBounds(134, 186, 111, 27);
-		
-		child2Panel.add(child2CoatComboBox);
-		child2ShoeLabel.setBounds(53, 236, 81, 16);
-		
-		child2Panel.add(child2ShoeLabel);
-		child2CoatLabel.setBounds(55, 190, 74, 16);
-		
-		child2Panel.add(child2CoatLabel);
-		child2ShoeFTF.setBounds(138, 230, 52, 26);
-		
-		child2Panel.add(child2ShoeFTF);
-		child2ShoeComboBox.setBounds(200, 231, 114, 27);
-		
-		child2Panel.add(child2ShoeComboBox);
-		child2GameSystemsLabel.setBounds(8, 292, 267, 16);
-		
-		child2Panel.add(child2GameSystemsLabel);
-		child2InterestsLabel.setBounds(18, 391, 256, 16);
-		
-		child2Panel.add(child2InterestsLabel);
-		child2OtherInterestsLabel.setBounds(167, 489, 104, 16);
-		
-		
-		child2Panel.add(child2OtherInterestsLabel);
-		child2OtherInterestsTextField.setColumns(10);
-		child2OtherInterestsTextField.setBounds(275, 484, 179, 26);
-		
-		child2Panel.add(child2OtherInterestsTextField);
-		child2InterestsScrollPanel.setBounds(286, 391, 162, 70);
-		
-		child2Panel.add(child2InterestsScrollPanel);
-		child2InterestsScrollPanel.setViewportView(child2InterestsList);
-		child2InterestsList.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Arts/Crafts", "Drawing", "Action Heroes", "Cars/Trucks", "Planes/Trains", "Music", "Construction", "Lego/Duplo", "Outdoors", "Dolls", "Sports"};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
+	//i ended up not using these two methods but i was too scared to delete them.....
+	protected void do_fNameFTF_focusLost(FocusEvent e) {
 	}
-	protected void panelThree() {
-		final JPanel child3Panel = new JPanel();
-		tabbedPane.addTab("Child 3", null, child3Panel, null);
-		child3Panel.setLayout(null);
-		child3NameMask.setPlaceholderCharacter(' ');
-		child3NameMask.install(child3NameFTF);
-		child3DayMask.setPlaceholderCharacter(' ');
-		child3DayMask.install(birthDay3FTF);
-		child3MonthMask.setPlaceholderCharacter(' ');
-		child3MonthMask.install(birthMonth3FTF);
-		child3YearMask.setPlaceholderCharacter(' ');
-		child3YearMask.install(birthYear3FTF);
-		child3ShoeMask.setPlaceholderCharacter(' ');
-		child3ShoeMask.install(child3ShoeFTF);
-		child3CoatComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
-		child3ShoeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Infant", "Toddler", "Child", "Adult"}));
-		child3NameLabel.setBounds(6, 8, 126, 16);
-		
-		child3Panel.add(child3NameLabel);
-		child3NameFTF.setBounds(133, 6, 321, 21);
-		
-		child3Panel.add(child3NameFTF);
-		child3GenderLabel.setBounds(66, 46, 55, 16);
-		
-		child3Panel.add(child3GenderLabel);
-		//
-		gender3Group.add(female3Button);
-		female3Button.setBounds(131, 42, 76, 23);
-		child3Panel.add(female3Button);
-		gender3Group.add(male3Button);
-		male3Button.setBounds(248, 42, 74, 23);
-		child3Panel.add(male3Button);
-		gender3Group.add(other3Button);
-		other3Button.setBounds(361, 42, 82, 23);
-		child3Panel.add(other3Button);
-		//
-		child3BirthdayLabel.setBounds(60, 88, 61, 16);
-		
-		child3Panel.add(child3BirthdayLabel);
-		birthDay3FTF.setBounds(166, 87, 46, 21);
-		
-		child3Panel.add(birthDay3FTF);
-		child3DayLabel.setBounds(125, 88, 61, 16);
-		
-		child3Panel.add(child3DayLabel);
-		child3MonthLabel.setBounds(217, 89, 55, 16);
-		
-		child3Panel.add(child3MonthLabel);
-		birthMonth3FTF.setBounds(268, 85, 44, 26);
-		
-		child3Panel.add(birthMonth3FTF);
-		child3YearLabel.setBounds(319, 90, 38, 16);
-		
-		child3Panel.add(child3YearLabel);
-		birthYear3FTF.setBounds(364, 86, 61, 26);
-		
-		child3Panel.add(birthYear3FTF);
-		child3AgeLabel.setBounds(90, 119, 38, 16);
-		
-		child3Panel.add(child3AgeLabel);
-		ageCalc3Label.setBounds(130, 119, 61, 16);
-		
-		child3Panel.add(ageCalc3Label);
-		child3ClothingComboBox.setBounds(133, 149, 111, 27);
-		birthYear3FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthYear3FTF_focusLost(e);
-			}
-		});
-		birthDay3FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthDay3FTF_focusLost(e);
-			}
-		});
-		birthMonth3FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthMonth3FTF_focusLost(e);
-			}
-		});
-		child3GameSystemsScrollPane.setBounds(287, 292, 162, 70);
-		
-		child3Panel.add(child3GameSystemsScrollPane);
-		child3GameSystemsScrollPane.setViewportView(child3GameSystemsList);
-		child3GameSystemsList.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Xbox 360", "Xbox One", "PS3", "PS4", "PSP", "Computer", "Wii", "Wii U", "Nintendo DS", "Nintendo 3DS"};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-		
-		child3Panel.add(child3ClothingComboBox);
-		child3ClothingLabel.setBounds(31, 154, 89, 16);
-		
-		child3Panel.add(child3ClothingLabel);
-		child3ClothingComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
-		child3CoatComboBox.setBounds(134, 186, 111, 27);
-		
-		child3Panel.add(child3CoatComboBox);
-		child3ShoeLabel.setBounds(53, 236, 81, 16);
-		
-		child3Panel.add(child3ShoeLabel);
-		child3CoatLabel.setBounds(55, 190, 74, 16);
-		
-		child3Panel.add(child3CoatLabel);
-		child3ShoeFTF.setBounds(138, 230, 52, 26);
-		
-		child3Panel.add(child3ShoeFTF);
-		child3ShoeComboBox.setBounds(200, 231, 114, 27);
-		
-		child3Panel.add(child3ShoeComboBox);
-		child3GameSystemsLabel.setBounds(8, 292, 267, 16);
-		
-		child3Panel.add(child3GameSystemsLabel);
-		child3InterestsLabel.setBounds(18, 391, 256, 16);
-		
-		child3Panel.add(child3InterestsLabel);
-		child3OtherInterestsLabel.setBounds(167, 489, 104, 16);
-		
-		child3Panel.add(child3OtherInterestsLabel);
-		child3OtherInterestsTextField.setColumns(10);
-		child3OtherInterestsTextField.setBounds(275, 484, 179, 26);
-		
-		child3Panel.add(child3OtherInterestsTextField);
-		child3InterestsScrollPanel.setBounds(286, 391, 162, 70);
-		
-		child3Panel.add(child3InterestsScrollPanel);
-		child3InterestsScrollPanel.setViewportView(child3InterestsList);
-		child3InterestsList.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Arts/Crafts", "Drawing", "Action Heroes", "Cars/Trucks", "Planes/Trains", "Music", "Construction", "Lego/Duplo", "Outdoors", "Dolls", "Sports"};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-	}
-	protected void panelFour() {
-		final JPanel child4Panel = new JPanel();
-		tabbedPane.addTab("Child 4", null, child4Panel, null);
-		child4Panel.setLayout(null);
-		child4NameMask.setPlaceholderCharacter(' ');
-		child4NameMask.install(child4NameFTF);
-		child4DayMask.setPlaceholderCharacter(' ');
-		child4DayMask.install(birthDay4FTF);
-		child4MonthMask.setPlaceholderCharacter(' ');
-		child4MonthMask.install(birthMonth4FTF);
-		child4YearMask.setPlaceholderCharacter(' ');
-		child4YearMask.install(birthYear4FTF);
-		child4ShoeMask.setPlaceholderCharacter(' ');
-		child4ShoeMask.install(child4ShoeFTF);
-		child4CoatComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
-		child4ShoeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Infant", "Toddler", "Child", "Adult"}));
-		child4NameLabel.setBounds(6, 8, 126, 16);
-		
-		child4Panel.add(child4NameLabel);
-		child4NameFTF.setBounds(133, 6, 321, 21);
-		
-		child4Panel.add(child4NameFTF);
-		child4GenderLabel.setBounds(66, 46, 55, 16);
-		
-		child4Panel.add(child4GenderLabel);
-		female4Button.setBounds(131, 42, 76, 23);
-		
-		
-		gender4Group.add(female4Button);
-		female4Button.setBounds(131, 42, 76, 23);
-		child4Panel.add(female4Button);
-		gender4Group.add(male4Button);
-		male4Button.setBounds(248, 42, 74, 23);
-		child4Panel.add(male4Button);
-		gender4Group.add(other4Button);
-		other4Button.setBounds(361, 42, 82, 23);
-		child4Panel.add(other4Button);
-		
-		child4Panel.add(child4BirthdayLabel);
-		child4BirthdayLabel.setBounds(60, 88, 61, 16);
-		birthDay4FTF.setBounds(166, 87, 46, 21);
-		
-		child4Panel.add(birthDay4FTF);
-		child4DayLabel.setBounds(125, 88, 61, 16);
-		
-		child4Panel.add(child4DayLabel);
-		child4MonthLabel.setBounds(217, 89, 55, 16);
-		
-		child4Panel.add(child4MonthLabel);
-		birthMonth4FTF.setBounds(268, 85, 44, 26);
-		
-		child4Panel.add(birthMonth4FTF);
-		child4YearLabel.setBounds(319, 90, 38, 16);
-		
-		child4Panel.add(child4YearLabel);
-		birthYear4FTF.setBounds(364, 86, 61, 26);
-		
-		child4Panel.add(birthYear4FTF);
-		child4AgeLabel.setBounds(90, 119, 38, 16);
-		
-		child4Panel.add(child4AgeLabel);
-		ageCalc4Label.setBounds(130, 119, 61, 16);
-		
-		child4Panel.add(ageCalc4Label);
-		child4ClothingComboBox.setModel(new DefaultComboBoxModel(new String[] {"XS", "S", "M", "L", "XL", "XXL", "XXXL<"}));
-		child4ClothingComboBox.setBounds(133, 149, 111, 27);
-		birthYear4FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthYear4FTF_focusLost(e);
-			}
-		});
-		birthDay4FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthDay4FTF_focusLost(e);
-			}
-		});
-		birthMonth4FTF.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				do_birthMonth4FTF_focusLost(e);
-			}
-		});
-		child4GameSystemsScrollPane.setBounds(287, 292, 162, 70);
-		
-		child4Panel.add(child4GameSystemsScrollPane);
-		child4GameSystemsScrollPane.setViewportView(child4GameSystemsList);
-		child4GameSystemsList.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Xbox 360", "Xbox One", "PS3", "PS4", "PSP", "Computer", "Wii", "Wii U", "Nintendo DS", "Nintendo 3DS"};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-		child4Panel.add(child4ClothingComboBox);
-		child4ClothingLabel.setBounds(31, 154, 89, 16);
-		
-		child4Panel.add(child4ClothingLabel);
-		child4CoatComboBox.setBounds(134, 186, 111, 27);
-		
-		child4Panel.add(child4CoatComboBox);
-		child4ShoeLabel.setBounds(53, 236, 81, 16);
-		
-		child4Panel.add(child4ShoeLabel);
-		child4CoatLabel.setBounds(55, 190, 74, 16);
-		
-		child4Panel.add(child4CoatLabel);
-		child4ShoeFTF.setBounds(138, 230, 52, 26);
-		
-		child4Panel.add(child4ShoeFTF);
-		child4ShoeComboBox.setBounds(200, 231, 114, 27);
-		
-		child4Panel.add(child4ShoeComboBox);
-		child4GameSystemsLabel.setBounds(8, 292, 267, 16);
-		
-		child4Panel.add(child4GameSystemsLabel);
-		
-		child4Panel.add(child4InterestsLabel);
-		child4OtherInterestsTextField.setColumns(10);
-		child4OtherInterestsTextField.setBounds(275, 484, 179, 26);
-		child4InterestsLabel.setBounds(18, 391, 256, 16);
-		child4OtherInterestsLabel.setBounds(167, 489, 104, 16);
-		
-		child4Panel.add(child4OtherInterestsLabel);
-		
-		child4Panel.add(child4OtherInterestsTextField);
-		child4InterestsScrollPanel.setBounds(286, 391, 162, 70);
-		
-		child4Panel.add(child4InterestsScrollPanel);
-		child4InterestsScrollPanel.setViewportView(child4InterestsList);
-		child4InterestsList.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Arts/Crafts", "Drawing", "Action Heroes", "Cars/Trucks", "Planes/Trains", "Music", "Construction", "Lego/Duplo", "Outdoors", "Dolls", "Sports"};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-
+	protected void do_fileMenu_actionPerformed(ActionEvent e) {
 	}
 }
